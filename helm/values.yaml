@@ -1,6 +1,7 @@
 controller:
-  image: test-controller-image:latest
-  pullPolicy: Never
+  image: alperp/selenium-test
+  pullPolicy: Always
+  tag: "latest"
 
 chrome:
   image: selenium/standalone-chrome:latest

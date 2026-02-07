@@ -48,8 +48,8 @@ spec:
     spec:
       containers:
       - name: test-controller
-        image: test-controller-image:latest  
-        imagePullPolicy: Never            
+        image: alperp/selenium-test:latest  
+        imagePullPolicy: Always           
         env:
         - name: PYTHONUNBUFFERED
           value: "1"
