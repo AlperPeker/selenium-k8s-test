@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: selenium-chrome-service
+spec:
+  selector:
+    app: chrome-node
+  ports:
+    - protocol: TCP
+      port: {{ .Values.chrome.port }}
+      targetPort: {{ .Values.chrome.port }}
+  type: ClusterIP

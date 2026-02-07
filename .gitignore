@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+
+*.pem
+*.csv
+.DS_Store
+
+.vscode/
+.idea/
+
+*.log
+geckodriver.log

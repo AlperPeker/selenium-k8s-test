@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chrome-node
+  labels:
+    app: chrome-node
+spec:
+  replicas: {{ .Values.chrome.nodeCount }}
+  selector:
+    matchLabels:
+      app: chrome-node
+  template:
+    metadata:
+      labels:
+        app: chrome-node
+    spec:
+      containers:
+        - name: chrome
+          image: {{ .Values.chrome.image }}
+          ports:
+            - containerPort: {{ .Values.chrome.port }}
+          volumeMounts:
+            - mountPath: /dev/shm
+              name: dshm
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory
